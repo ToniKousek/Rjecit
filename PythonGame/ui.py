@@ -9,11 +9,9 @@ def green(s):
 #main game loop
 def main():
     # player input
-    # see if word is correct
-    # see if word is the answer
     # calculate the needed coloring
     # print the words
-    # logic for repeting
+    # logic for repeating
 
     pass
 #TODO local storage for win ratio
