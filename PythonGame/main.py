@@ -20,7 +20,7 @@ len_of_words = 5
 lookup = []
 with open(f"{getcwd()}\\HR_5_letters.txt", "r", encoding="utf-8") as file:
     for line in file:
-        lookup.append(line.split()[0])
+        lookup.append(line.split()[0].lower())
 
 # print(lookup[:100])
 
