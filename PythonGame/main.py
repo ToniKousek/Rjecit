@@ -61,7 +61,7 @@ def check_words(answer: str, words: list[str]):
         colored_words = []
         for word in words:
             colored_words.append(check_coloring(answer, word))
-    return (words, colored_words)
+    return (colored_words)
 
 
 # example
