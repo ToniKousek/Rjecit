@@ -37,7 +37,7 @@ def check_coloring(answer: str, word: str):
 
     # set all yellow
     for i in range(len_of_words):
-        print(f"{(word[i] in answer)=} {word[i]=} {answer=} ")
+        #print(f"{(word[i] in answer)=} {word[i]=} {answer=} ")
         if word[i] in temp_answer:
             word_col[i] = "y"
             # find the index of the letter
@@ -54,7 +54,7 @@ def check_words(answer: str, words: list[str]):
 
     # see if the word is the answer
     if words[-1] == answer:
-        return 1
+        return (1,colored_words)
 
     # calculate the coloring
     else:
