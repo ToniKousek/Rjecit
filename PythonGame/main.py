@@ -1,7 +1,7 @@
 # wordle game logic
 
-from os import getcwd
 import glob
+from random import choice
 
 # the check_words function is the most important
 # returns -1 if word is not in the file
@@ -65,6 +65,8 @@ def check_words(answer: str, words: list[str]):
         return (1,colored_words)
     return (colored_words)
 
+def random_word() -> str:
+    return choice(lookup)
 
 # example
 #words_to = ["aaaaa", "amper"]
