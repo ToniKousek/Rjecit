@@ -1,6 +1,7 @@
 # wordle game logic
 
 from os import getcwd
+import glob
 
 # the check_words function is the most important
 # returns -1 if word is not in the file
@@ -15,10 +16,11 @@ from os import getcwd
 # the 'y' is yellow
 
 len_of_words = 5
+num_of_tries = 6
 
 # the lookup table
 lookup = []
-with open(f"{getcwd()}\\HR_5_letters.txt", "r", encoding="utf-8") as file:
+with open(glob.glob('**/*.txt', recursive=True)[0], "r", encoding="utf-8") as file:
     for line in file:
         lookup.append(line.split()[0].lower())
 
@@ -52,18 +54,18 @@ def check_words(answer: str, words: list[str]):
     if not (words[-1] in lookup):
         return -1
 
-    # see if the word is the answer
-    if words[-1] == answer:
-        return (1,colored_words)
-
     # calculate the coloring
     else:
         colored_words = []
         for word in words:
             colored_words.append(check_coloring(answer, word))
+
+    # see if the word is the answer
+    if words[-1] == answer:
+        return (1,colored_words)
     return (colored_words)
 
 
 # example
-# words_to = ["aaaaa", "Aaaaa"]
-# print(check_words("aeiou", words_to))
+#words_to = ["aaaaa", "amper"]
+#print(check_words("amper", words_to))
